@@ -1,0 +1,1 @@
+# urishga-qarshimz
