@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+    color: #333;
+    font-size: 3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .5s all ease;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+ul:hover li {
+    color: transparent;
+    -webkit-text-stroke: 1px #333;
+}
+
+ul li:hover {
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.075);
+}
+
+ul li::before {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f00;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .5s all ease;
+    color: hsla(0, 0%, 0%, 0.05);
+    font-size: 15vw;
+    -webkit-text-stroke: 0px #333;
+    letter-spacing: 90px;
+}
+
+ul li:hover::before {
+    content: attr(data-text);
+    letter-spacing: 10px;
+    opacity: 1;
+}
+
+ul li:nth-child(1)::before {
+    background: linear-gradient(#3399FE 0%, #3399FE 31%, #F80401 31%, #F80401 33%, #fff 33%, #fff 64%, #F80401 64%, #F80401 66%, #01CC00 66%, #01CC00 100%);
+}
+
+ul li:nth-child(2)::before {
+    background: linear-gradient(#005bbc 0%, #005bbc 50%, #ffd600 50%, #ffd600 100%);
+}
+
+ul li:nth-child(3)::before {
+    background: linear-gradient(#fff 0%, #fff 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%, #d52b1e 100%);
+}
+
+.box {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    display: flex;
+    opacity: 0;
+}
+
+.stars {
+    display: flex;
+    transform: rotateX(190deg);
+    gap: 15px;
+    z-index: 3;
+
+}
+
+.star-icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.bxs-star {
+    transform: rotateX(190deg);
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+    transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+.op {
+    transition: .5s;
+    opacity: 1;
+}
+
+.moon {
+    transition: .5s;
+    position: relative;
+}
+
+.moon-one {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: .5s;
+    z-index: 1;
+}
+
+.moon-two {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    background-color: #3399FE;
+    transition: .5s;
+    border-radius: 50%;
+}
